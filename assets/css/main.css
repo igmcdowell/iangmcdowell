@@ -25,6 +25,32 @@
 	margin-top: 2em;
 }
 
+/* My overrides */
+
+.author img {
+	max-width: 100%;
+	box-shadow: 2px 2px 8px #555;
+}
+@media screen and (max-width: 736px) {
+	.author img {
+		max-width: min(calc(100% -40px), 400px);
+	}
+}
+
+.author .bio {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author .bio p {
+	margin: 10px
+}
+
+.author .bio-image {
+	text-align: center;
+}
+
 #footer {
 	padding: 0;
 }
@@ -42,7 +68,6 @@
 
 #author {
 	font-size: 1.2em;
-	text-align: center;
 }
 
 #author .wrapper {

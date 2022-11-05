@@ -27,13 +27,21 @@
 
 /* My overrides */
 
+.author .bio-image {
+	padding: 0 40px;
+}
+
 .author img {
-	max-width: 100%;
+	max-width: min(calc(100% - 80px), 400px);
 	box-shadow: 2px 2px 8px #555;
 }
-@media screen and (max-width: 736px) {
+
+@media screen and (max-width: 1024px) {
+	.author .bio-image {
+		padding: 0 20px;
+	}
 	.author img {
-		max-width: min(calc(100% -40px), 400px);
+		max-width: min(calc(100% - 40px), 400px);
 	}
 }
 

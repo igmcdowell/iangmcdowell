@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://iangmcdowell.com/blog/posts/ghost-comm/</loc>
+    <lastmod>2022-11-05T14:23:17-07:00</lastmod>
+  </url><url>
     <loc>http://iangmcdowell.com/blog/</loc>
-    <lastmod>2022-10-31T17:05:38-07:00</lastmod>
+    <lastmod>2022-11-05T14:23:17-07:00</lastmod>
   </url><url>
     <loc>http://iangmcdowell.com/blog/posts/</loc>
-    <lastmod>2022-10-31T17:05:38-07:00</lastmod>
+    <lastmod>2022-11-05T14:23:17-07:00</lastmod>
   </url><url>
     <loc>http://iangmcdowell.com/blog/posts/write-the-query-letter-first/</loc>
     <lastmod>2022-10-31T17:05:38-07:00</lastmod>

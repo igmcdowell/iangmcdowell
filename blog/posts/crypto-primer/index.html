@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Cryptography Primer | Ian G McDowell&#39;s Blog</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what&rsquo;s inside unless they have the same key you used to lock it.">
+<meta name="author" content="">
+<link rel="canonical" href="https://iangmcdowell.com/blog/posts/crypto-primer/" />
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css" integrity="sha256-yIlj/i15RiAA/Q&#43;xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/blog/assets/js/highlight.min.b95bacdc39e37a332a9f883b1e78be4abc1fdca2bc1f2641f55e3cd3dabd4d61.js" integrity="sha256-uVus3DnjejMqn4g7Hni&#43;Srwf3KK8HyZB9V4809q9TWE="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://iangmcdowell.com/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://iangmcdowell.com/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://iangmcdowell.com/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://iangmcdowell.com/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://iangmcdowell.com/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.104.3" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Cryptography Primer" />
+<meta property="og:description" content="Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what&rsquo;s inside unless they have the same key you used to lock it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iangmcdowell.com/blog/posts/crypto-primer/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-10T16:39:39-08:00" />
+<meta property="article:modified_time" content="2022-11-10T16:39:39-08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cryptography Primer"/>
+<meta name="twitter:description" content="Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what&rsquo;s inside unless they have the same key you used to lock it."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://iangmcdowell.com/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Cryptography Primer",
+      "item": "https://iangmcdowell.com/blog/posts/crypto-primer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cryptography Primer",
+  "name": "Cryptography Primer",
+  "description": "Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what\u0026rsquo;s inside unless they have the same key you used to lock it.",
+  "keywords": [
+    
+  ],
+  "articleBody": "A Five Minute Cryptography Primer Several plot points in The Anshar Gambit hinge on who is allowed to use a computer system.\nThere are different ways to secure systems, but arguably the strongest is using something called asymmetric encryption.\nSay What? Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what’s inside unless they have the same key you used to lock it. This basic approach is called ‘symmetric encryption.’\nThe ‘asymmetric’ part adds an extra wrinkle. Instead of the lock having one keyhole, it has two, and each turns for a different key – let’s call them keys ‘A’ and ‘B.’\nThis lock has a special mechanism: if you lock it with one key, you must use the other to unlock it. e.g. if you lock it with key ‘A’, you can only unlock it with key ‘B.’ Conversely, if you lock it with key ‘B,’ you can only unlock it with key ‘A.’\nThis odd behavior becomes useful when you pick one of the keys to make “public” and hand out copies to anyone who wants them. The other key you keep “private” and guard jealously.\nNow anyone can use the public key to lock a secret message in the box, but only the person with the private key can unlock the box to read it.\nFor example, let’s say Alice wants to securely send a message to Robert… erm… Bob. Alice writes her message and locks it up with Bob’s public key. Now Bob (and only Bob) can use his private key to unlock the box and read what Alice wrote.\nOkay, but how does that protect access to a computer? I’m going to push our two-key lock analogy even further. Before we had Alice locking a message inside the box using a copy of Bob’s public key. Bob then used his private key to open it and read the secret stuff.\nNow we’re going to flip it around. This time Bob locks a message in the box using his private key. Since he’s handed out copies of his public key to anyone who wants it, lots of people can open the box and read what’s inside. So what? That doesn’t sound very secret, right?\nRight. Bob’s messages are totally not secure when he locks them up with his private key. Anyone with the public key can read them. But(!) the fact that the public key opens the lock proves that Bob wrote the message.\nThis is important, so I’ll repeat it. The public key only opens a box locked with the matching private key. And only Bob has the matching private key. So if Bob’s public key can open the box, it must mean that Bob wrote the message.\nWe have taken our tool for sending secret messages to Bob and turned it into a tool for writing authenticated messages from Bob.\nOkay, but seriously, how does that protect access to a computer? We’re almost there, I promise. The answer hinges on using your private key to prove your identity.\nImagine a super-secure computer that only Alice is allowed to use. Whoever set up the computer gave it a copy of that Alice’s public key.\nWhen Alice wants to log in, she encrypts a message with her private key that says “I’m me.” The computer will try to unlock it with Alice’s public key, succeed, and grant access.\nAnyone who’s not Alice is out of luck. Without a copy of her private key, the computer won’t let them in.\nIf you want to allow someone else to also use the computer, you can add their public key to the computer’s list of approved users. Then they can log in the same way Alice did.\nAn example. Please. In The Anshar Gambit, there are ground stations that are allowed to talk to the computer on the asteroid. For security, the asteroid obeys commands from official stations, but ignores commands from imposters.\nTo do so, the asteroid computer keeps a list of public keys of the official, authorized ground stations.\nFor a ground station to issue a command, it connects to the asteroid and sends a message encrypted with its private key. The asteroid computer tries unlocking the message with the matching public key.\nIf it unlocks, then the station must be one of the official ones, and it’s allowed to issue commands. Otherwise, the asteroid rejects the connection, potentially resulting in the fiery deaths of millions.\nOh. Neat! Yeah.\n",
+  "wordCount" : "765",
+  "inLanguage": "en",
+  "datePublished": "2022-11-10T16:39:39-08:00",
+  "dateModified": "2022-11-10T16:39:39-08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://iangmcdowell.com/blog/posts/crypto-primer/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ian G McDowell's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iangmcdowell.com/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://iangmcdowell.com/blog" accesskey="h" title="Ian G McDowell&#39;s Blog (Alt + H)">Ian G McDowell&#39;s Blog</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://iangmcdowell.com/#books" title="The Books">
+                    <span>The Books</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://iangmcdowell.com/#author" title="The Author">
+                    <span>The Author</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Cryptography Primer
+    </h1>
+    <div class="post-meta"><span title='2022-11-10 16:39:39 -0800 PST'>November 10, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="a-five-minute-cryptography-primer">A Five Minute Cryptography Primer<a hidden class="anchor" aria-hidden="true" href="#a-five-minute-cryptography-primer">#</a></h1>
+<p>Several plot points in <a href="https://www.amazon.com/dp/B0BL2JD1LJ">The Anshar Gambit</a> hinge on who is allowed to use a computer system.</p>
+<p>There are different ways to secure systems, but arguably the strongest is using something called asymmetric encryption.</p>
+<h2 id="say-what">Say What?<a hidden class="anchor" aria-hidden="true" href="#say-what">#</a></h2>
+<p>Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what&rsquo;s inside unless they have the same key you used to lock it. This basic approach is called &lsquo;symmetric encryption.&rsquo;</p>
+<p>The &lsquo;asymmetric&rsquo; part adds an extra wrinkle. Instead of the lock having one keyhole, it has two, and each turns for a different key – let&rsquo;s call them keys &lsquo;A&rsquo; and &lsquo;B.&rsquo;</p>
+<p>This lock has a special mechanism: if you lock it with one key, you must use the other to unlock it. e.g. if you lock it with key &lsquo;A&rsquo;, you can only unlock it with key &lsquo;B.&rsquo; Conversely, if you lock it with key &lsquo;B,&rsquo; you can only unlock it with key &lsquo;A.&rsquo;</p>
+<p>This odd behavior becomes useful when you pick one of the keys to make &ldquo;public&rdquo; and hand out copies to anyone who wants them. The other key you keep &ldquo;private&rdquo; and guard jealously.</p>
+<p>Now anyone can use the <strong>public</strong> key to lock a secret message in the box, but only the person with the <strong>private</strong> key can unlock the box to read it.</p>
+<p>For example, let&rsquo;s say Alice wants to securely send a message to Robert… erm… Bob. Alice writes her message and locks it up with Bob&rsquo;s <strong>public</strong> key. Now Bob (and only Bob) can use his <strong>private</strong> key to unlock the box and read what Alice wrote.</p>
+<h2 id="okay-but-how-does-that-protect-access-to-a-computer">Okay, but how does that protect access to a computer?<a hidden class="anchor" aria-hidden="true" href="#okay-but-how-does-that-protect-access-to-a-computer">#</a></h2>
+<p>I&rsquo;m going to push our two-key lock analogy even further. Before we had Alice locking a message inside the box using a copy of Bob&rsquo;s <strong>public</strong> key. Bob then used his <strong>private</strong> key to open it and read the secret stuff.</p>
+<p>Now we&rsquo;re going to flip it around. This time <em>Bob</em> locks a message in the box using his <strong>private</strong> key. Since he&rsquo;s handed out copies of his <strong>public</strong> key to anyone who wants it, lots of people can open the box and read what&rsquo;s inside. So what? That doesn&rsquo;t sound very secret, right?</p>
+<p>Right. Bob&rsquo;s messages are totally not secure when he locks them up with his private key. Anyone with the public key can read them. But(!) the fact that the public key opens the lock proves that <em>Bob wrote the message.</em></p>
+<p>This is important, so I&rsquo;ll repeat it. The <strong>public</strong> key only opens a box locked with the matching <strong>private</strong> key. And only Bob has the matching <strong>private</strong> key. So if Bob&rsquo;s <strong>public</strong> key can open the box, it must mean that Bob wrote the message.</p>
+<p>We have taken our tool for sending secret messages <em>to</em> Bob and turned it into a tool for writing <em>authenticated</em> messages <em>from</em> Bob.</p>
+<h2 id="okay-but-seriously-how-does-that-protect-access-to-a-computer">Okay, but seriously, how does that protect access to a computer?<a hidden class="anchor" aria-hidden="true" href="#okay-but-seriously-how-does-that-protect-access-to-a-computer">#</a></h2>
+<p>We&rsquo;re almost there, I promise. The answer hinges on using your private key to prove your identity.</p>
+<p>Imagine a super-secure computer that only Alice is allowed to use. Whoever set up the computer gave it a copy of that Alice&rsquo;s <strong>public</strong> key.</p>
+<p>When Alice wants to log in, she encrypts a message with her <strong>private</strong> key that says &ldquo;I&rsquo;m me.&rdquo; The computer will try to unlock it with Alice&rsquo;s <strong>public</strong> key, succeed, and grant access.</p>
+<p>Anyone who&rsquo;s not Alice is out of luck. Without a copy of her <strong>private</strong> key, the computer won&rsquo;t let them in.</p>
+<p>If you want to allow someone else to also use the computer, you can add their <strong>public</strong> key to the computer&rsquo;s list of approved users. Then they can log in the same way Alice did.</p>
+<h2 id="an-example-please">An example. Please.<a hidden class="anchor" aria-hidden="true" href="#an-example-please">#</a></h2>
+<p>In The Anshar Gambit, there are ground stations that are allowed to talk to the computer on the asteroid. For security, the asteroid obeys commands from official stations, but ignores commands from imposters.</p>
+<p>To do so, the asteroid computer keeps a list of <strong>public</strong> keys of the official, authorized ground stations.</p>
+<p>For a ground station to issue a command, it connects to the asteroid and sends a message encrypted with its <strong>private</strong> key. The asteroid computer tries unlocking the message with the matching <strong>public</strong> key.</p>
+<p>If it unlocks, then the station must be one of the official ones, and it&rsquo;s allowed to issue commands. Otherwise, the asteroid rejects the connection, potentially resulting in the fiery deaths of millions.</p>
+<h2 id="oh-neat">Oh. Neat!<a hidden class="anchor" aria-hidden="true" href="#oh-neat">#</a></h2>
+<p>Yeah.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://iangmcdowell.com/blog">Ian G McDowell&#39;s Blog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

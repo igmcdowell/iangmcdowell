@@ -2,23 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://iangmcdowell.com/blog/posts/ghost-comm/</loc>
+    <loc>https://iangmcdowell.com/blog/posts/crypto-primer/</loc>
+    <lastmod>2022-11-10T16:39:39-08:00</lastmod>
+  </url><url>
+    <loc>https://iangmcdowell.com/blog/</loc>
+    <lastmod>2022-11-10T16:39:39-08:00</lastmod>
+  </url><url>
+    <loc>https://iangmcdowell.com/blog/posts/</loc>
+    <lastmod>2022-11-10T16:39:39-08:00</lastmod>
+  </url><url>
+    <loc>https://iangmcdowell.com/blog/posts/ghost-comm/</loc>
     <lastmod>2022-11-05T14:23:17-07:00</lastmod>
   </url><url>
-    <loc>http://iangmcdowell.com/blog/</loc>
-    <lastmod>2022-11-05T14:23:17-07:00</lastmod>
-  </url><url>
-    <loc>http://iangmcdowell.com/blog/posts/</loc>
-    <lastmod>2022-11-05T14:23:17-07:00</lastmod>
-  </url><url>
-    <loc>http://iangmcdowell.com/blog/posts/write-the-query-letter-first/</loc>
+    <loc>https://iangmcdowell.com/blog/posts/write-the-query-letter-first/</loc>
     <lastmod>2022-10-31T17:05:38-07:00</lastmod>
   </url><url>
-    <loc>http://iangmcdowell.com/blog/posts/intro-to-marketing-newsletters/</loc>
+    <loc>https://iangmcdowell.com/blog/posts/intro-to-marketing-newsletters/</loc>
     <lastmod>2022-10-19T17:05:38-07:00</lastmod>
   </url><url>
-    <loc>http://iangmcdowell.com/blog/categories/</loc>
+    <loc>https://iangmcdowell.com/blog/categories/</loc>
   </url><url>
-    <loc>http://iangmcdowell.com/blog/tags/</loc>
+    <loc>https://iangmcdowell.com/blog/tags/</loc>
   </url>
 </urlset>

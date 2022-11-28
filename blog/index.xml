@@ -2,35 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ian G McDowell&#39;s Blog</title>
-    <link>http://iangmcdowell.com/blog/</link>
+    <link>https://iangmcdowell.com/blog/</link>
     <description>Recent content on Ian G McDowell&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Nov 2022 14:23:17 -0700</lastBuildDate><atom:link href="http://iangmcdowell.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2022 16:39:39 -0800</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cryptography Primer</title>
+      <link>https://iangmcdowell.com/blog/posts/crypto-primer/</link>
+      <pubDate>Thu, 10 Nov 2022 16:39:39 -0800</pubDate>
+      
+      <guid>https://iangmcdowell.com/blog/posts/crypto-primer/</guid>
+      <description>Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what&amp;rsquo;s inside unless they have the same key you used to lock it.</description>
+    </item>
+    
     <item>
       <title>Ghost Comm</title>
-      <link>http://iangmcdowell.com/blog/posts/ghost-comm/</link>
+      <link>https://iangmcdowell.com/blog/posts/ghost-comm/</link>
       <pubDate>Sat, 05 Nov 2022 14:23:17 -0700</pubDate>
       
-      <guid>http://iangmcdowell.com/blog/posts/ghost-comm/</guid>
+      <guid>https://iangmcdowell.com/blog/posts/ghost-comm/</guid>
       <description>Talking silently is obviously a huge advantage in combat; it&amp;rsquo;s one step away from telepathy. It sounds like crazy sci-fi, but most of the pieces already exist today.</description>
     </item>
     
     <item>
       <title>Write the Query Letter First</title>
-      <link>http://iangmcdowell.com/blog/posts/write-the-query-letter-first/</link>
+      <link>https://iangmcdowell.com/blog/posts/write-the-query-letter-first/</link>
       <pubDate>Mon, 31 Oct 2022 17:05:38 -0700</pubDate>
       
-      <guid>http://iangmcdowell.com/blog/posts/write-the-query-letter-first/</guid>
+      <guid>https://iangmcdowell.com/blog/posts/write-the-query-letter-first/</guid>
       <description>Picture your future. You&amp;rsquo;ve written your masterpiece. You&amp;rsquo;re ready to find an agent who can sell your book to Hachette or Tor or whatever. What do you do next?</description>
     </item>
     
     <item>
       <title>Intro to Independent Author Mailing Lists</title>
-      <link>http://iangmcdowell.com/blog/posts/intro-to-marketing-newsletters/</link>
+      <link>https://iangmcdowell.com/blog/posts/intro-to-marketing-newsletters/</link>
       <pubDate>Wed, 19 Oct 2022 17:05:38 -0700</pubDate>
       
-      <guid>http://iangmcdowell.com/blog/posts/intro-to-marketing-newsletters/</guid>
+      <guid>https://iangmcdowell.com/blog/posts/intro-to-marketing-newsletters/</guid>
       <description>The only thing harder than writing a book is selling a book. I enjoy reading what I wrote, and I think others will too. But helping people to find it in the crowded world of independent publishing? Tricky.</description>
     </item>
     

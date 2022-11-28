@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Cryptography Primer | Ian G McDowell&#39;s Blog</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="technology, anshar" />
 <meta name="description" content="Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what&rsquo;s inside unless they have the same key you used to lock it.">
 <meta name="author" content="">
 <link rel="canonical" href="https://iangmcdowell.com/blog/posts/crypto-primer/" />
@@ -97,7 +97,7 @@
   "name": "Cryptography Primer",
   "description": "Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what\u0026rsquo;s inside unless they have the same key you used to lock it.",
   "keywords": [
-    
+    "technology", "anshar"
   ],
   "articleBody": "A Five Minute Cryptography Primer Several plot points in The Anshar Gambit hinge on who is allowed to use a computer system.\nThere are different ways to secure systems, but arguably the strongest is using something called asymmetric encryption.\nSay What? Encryption is a fancy word for a simple concept. You can think of encrypting a message as putting it inside a box with a padlock and locking it. No one can read what’s inside unless they have the same key you used to lock it. This basic approach is called ‘symmetric encryption.’\nThe ‘asymmetric’ part adds an extra wrinkle. Instead of the lock having one keyhole, it has two, and each turns for a different key – let’s call them keys ‘A’ and ‘B.’\nThis lock has a special mechanism: if you lock it with one key, you must use the other to unlock it. e.g. if you lock it with key ‘A’, you can only unlock it with key ‘B.’ Conversely, if you lock it with key ‘B,’ you can only unlock it with key ‘A.’\nThis odd behavior becomes useful when you pick one of the keys to make “public” and hand out copies to anyone who wants them. The other key you keep “private” and guard jealously.\nNow anyone can use the public key to lock a secret message in the box, but only the person with the private key can unlock the box to read it.\nFor example, let’s say Alice wants to securely send a message to Robert… erm… Bob. Alice writes her message and locks it up with Bob’s public key. Now Bob (and only Bob) can use his private key to unlock the box and read what Alice wrote.\nOkay, but how does that protect access to a computer? I’m going to push our two-key lock analogy even further. Before we had Alice locking a message inside the box using a copy of Bob’s public key. Bob then used his private key to open it and read the secret stuff.\nNow we’re going to flip it around. This time Bob locks a message in the box using his private key. Since he’s handed out copies of his public key to anyone who wants it, lots of people can open the box and read what’s inside. So what? That doesn’t sound very secret, right?\nRight. Bob’s messages are totally not secure when he locks them up with his private key. Anyone with the public key can read them. But(!) the fact that the public key opens the lock proves that Bob wrote the message.\nThis is important, so I’ll repeat it. The public key only opens a box locked with the matching private key. And only Bob has the matching private key. So if Bob’s public key can open the box, it must mean that Bob wrote the message.\nWe have taken our tool for sending secret messages to Bob and turned it into a tool for writing authenticated messages from Bob.\nOkay, but seriously, how does that protect access to a computer? We’re almost there, I promise. The answer hinges on using your private key to prove your identity.\nImagine a super-secure computer that only Alice is allowed to use. Whoever set up the computer gave it a copy of that Alice’s public key.\nWhen Alice wants to log in, she encrypts a message with her private key that says “I’m me.” The computer will try to unlock it with Alice’s public key, succeed, and grant access.\nAnyone who’s not Alice is out of luck. Without a copy of her private key, the computer won’t let them in.\nIf you want to allow someone else to also use the computer, you can add their public key to the computer’s list of approved users. Then they can log in the same way Alice did.\nAn example. Please. In The Anshar Gambit, there are ground stations that are allowed to talk to the computer on the asteroid. For security, the asteroid obeys commands from official stations, but ignores commands from imposters.\nTo do so, the asteroid computer keeps a list of public keys of the official, authorized ground stations.\nFor a ground station to issue a command, it connects to the asteroid and sends a message encrypted with its private key. The asteroid computer tries unlocking the message with the matching public key.\nIf it unlocks, then the station must be one of the official ones, and it’s allowed to issue commands. Otherwise, the asteroid rejects the connection, potentially resulting in the fiery deaths of millions.\nOh. Neat! Yeah.\n",
   "wordCount" : "765",
@@ -219,6 +219,10 @@
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://iangmcdowell.com/blog/tags/technology/">technology</a></li>
+      <li><a href="https://iangmcdowell.com/blog/tags/anshar/">anshar</a></li>
+    </ul>
   </footer>
 </article>
     </main>

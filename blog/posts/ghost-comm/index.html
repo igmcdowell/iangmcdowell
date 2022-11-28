@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Ghost Comm | Ian G McDowell&#39;s Blog</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="technology, anshar" />
 <meta name="description" content="Talking silently is obviously a huge advantage in combat; it&rsquo;s one step away from telepathy. It sounds like crazy sci-fi, but most of the pieces already exist today.">
 <meta name="author" content="">
 <link rel="canonical" href="https://iangmcdowell.com/blog/posts/ghost-comm/" />
@@ -97,7 +97,7 @@
   "name": "Ghost Comm",
   "description": "Talking silently is obviously a huge advantage in combat; it\u0026rsquo;s one step away from telepathy. It sounds like crazy sci-fi, but most of the pieces already exist today.",
   "keywords": [
-    
+    "technology", "anshar"
   ],
   "articleBody": "The Tech of Anshar Gambit: Ghost Comm One of the first bits of future-tech introduced in The Anshar Gambit is the subvocal communication system nicknamed “Ghost Comm.”\nTalking silently is obviously a huge advantage in combat; it’s one step away from telepathy. It sounds like crazy sci-fi, but most of the pieces already exist today. I’ll walk you through the two sides: transmitting and receiving.\nTransmitting Ghost Comm works by catching electrical signals from the muscles in your face and translating them into words. The crux of the idea rests on the 2018 paper Development of sEMG sensors and algorithms for silent speech recognition.\nThe authors rigged sensors on the neck and face that detected muscle activity. They had subjects silently form words, recorded the data, and fed the results into a software package to reconstruct speech.\nWord detection was done through a class of algorithm known as a Hidden Markov Model (HMM), which resulted in 91% accuracy. Pretty good, but dropping one in ten words is probably a non-starter for the military.\nI’m not an expert, but it appears the field is transitioning away from HMMs to using Recurrent Neural Networks (RNNs) with Connectionist Temporal Classification (CTC) to improve results. If you really want to go deep on the tech (pun intended), this blog post is a great info dump.\nFor my book, I supposed that this or other algorithmic advances could bring accuracy closer to 100%, especially if you add a final training step to the models on a per-user basis.\nThat takes care of the software, but the hardware side also poses a challenge. There are some wearable sensors currently on the market, but they are bulky and have limited battery life.\nThe closest commercial product right now is probably the Cricket, which looks kind of like a fitbit had sex with a bandaid. To get the hardware in the book, this package would need to shrink to a paper-thin strip. Plausible with a few decades of advances, especially if you can shrink the battery.\nThere’s some promising research on that front; a recent paper claims a nearly 10x increase in battery life through some architectural changes.\nTaken together, I think the tech is both plausible and likely.\nReceiving While transmission tech still has a ways to go, the receiving side is pretty much ready today. There are already consumer headphones on the market that transmit through bone conduction, though these go on the outside of your head.\nThere are also medical devices for hearing disorders that are directly implanted; I envision these as one component of the “Command Module” referenced in my book.\nThe tight seal of such as system would result in a bare minimum of sound leaving the skull. So for commanders like Marcos the system would be essentially silent, while the troops wearing headsets might make a little more noise.\n",
   "wordCount" : "477",
@@ -208,6 +208,10 @@ on that front; a recent paper claims a nearly 10x increase in battery life throu
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://iangmcdowell.com/blog/tags/technology/">technology</a></li>
+      <li><a href="https://iangmcdowell.com/blog/tags/anshar/">anshar</a></li>
+    </ul>
   </footer>
 </article>
     </main>

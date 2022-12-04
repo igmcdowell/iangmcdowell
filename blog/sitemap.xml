@@ -2,16 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://iangmcdowell.com/blog/posts/anshar-chat-gpt/</loc>
+    <lastmod>2022-12-03T20:17:50-08:00</lastmod>
+  </url><url>
+    <loc>https://iangmcdowell.com/blog/</loc>
+    <lastmod>2022-12-03T20:17:50-08:00</lastmod>
+  </url><url>
+    <loc>https://iangmcdowell.com/blog/posts/</loc>
+    <lastmod>2022-12-03T20:17:50-08:00</lastmod>
+  </url><url>
     <loc>https://iangmcdowell.com/blog/tags/anshar/</loc>
     <lastmod>2022-11-10T16:39:39-08:00</lastmod>
   </url><url>
     <loc>https://iangmcdowell.com/blog/posts/crypto-primer/</loc>
-    <lastmod>2022-11-10T16:39:39-08:00</lastmod>
-  </url><url>
-    <loc>https://iangmcdowell.com/blog/</loc>
-    <lastmod>2022-11-10T16:39:39-08:00</lastmod>
-  </url><url>
-    <loc>https://iangmcdowell.com/blog/posts/</loc>
     <lastmod>2022-11-10T16:39:39-08:00</lastmod>
   </url><url>
     <loc>https://iangmcdowell.com/blog/tags/</loc>

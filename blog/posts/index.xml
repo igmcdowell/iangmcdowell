@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Ian G McDowell&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Nov 2022 16:39:39 -0800</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 20:17:50 -0800</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Asked ChatGPT To Write My Book Synopsis</title>
+      <link>https://iangmcdowell.com/blog/posts/anshar-chat-gpt/</link>
+      <pubDate>Sat, 03 Dec 2022 20:17:50 -0800</pubDate>
+      
+      <guid>https://iangmcdowell.com/blog/posts/anshar-chat-gpt/</guid>
+      <description>I&amp;rsquo;ve been reading a lot about ChatGPT, the latest large language model to come out of OpenAI. I just spent the last year painstakingly writing a technothriller, and wanted to know how close I was to obsolete. I decided to kick the tires and ran ChatGPT through some of the tasks I went through making The Anshar Gambit.
+It&amp;rsquo;s not ready to write a book yet, but I thought the output was pretty damned impressive.</description>
+    </item>
+    
     <item>
       <title>Cryptography Primer</title>
       <link>https://iangmcdowell.com/blog/posts/crypto-primer/</link>

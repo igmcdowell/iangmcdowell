@@ -40,6 +40,10 @@
 	}
 }
 
+.anshar-cover {
+	height: 500px;
+}
+
 .author .bio {
 	display: flex;
     flex-direction: column;

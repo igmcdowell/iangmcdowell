@@ -6,7 +6,16 @@
     <description>Recent content in writing on Ian G McDowell&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Oct 2022 17:05:38 -0700</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 20:06:35 -0800</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laying Out a Print Book With CSS</title>
+      <link>https://iangmcdowell.com/blog/posts/laying-out-a-book-with-css/</link>
+      <pubDate>Sun, 19 Mar 2023 20:06:35 -0800</pubDate>
+      
+      <guid>https://iangmcdowell.com/blog/posts/laying-out-a-book-with-css/</guid>
+      <description>In which I embark on a quixotic quest to make a physical book using web rendering technology.</description>
+    </item>
+    
     <item>
       <title>Write the Query Letter First</title>
       <link>https://iangmcdowell.com/blog/posts/write-the-query-letter-first/</link>

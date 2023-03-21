@@ -6,7 +6,16 @@
     <description>Recent content on Ian G McDowell&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2022 20:17:50 -0800</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Mar 2023 20:06:35 -0800</lastBuildDate><atom:link href="https://iangmcdowell.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laying Out a Print Book With CSS</title>
+      <link>https://iangmcdowell.com/blog/posts/laying-out-a-book-with-css/</link>
+      <pubDate>Sun, 19 Mar 2023 20:06:35 -0800</pubDate>
+      
+      <guid>https://iangmcdowell.com/blog/posts/laying-out-a-book-with-css/</guid>
+      <description>In which I embark on a quixotic quest to make a physical book using web rendering technology.</description>
+    </item>
+    
     <item>
       <title>I Asked ChatGPT To Write My Book Synopsis</title>
       <link>https://iangmcdowell.com/blog/posts/anshar-chat-gpt/</link>

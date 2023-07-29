@@ -50,7 +50,8 @@
 											<form class="row-form ml-block-form" action="https://assets.mailerlite.com/jsonp/195073/forms/69366388450395494/subscribe" data-code="" method="post" target="_blank">
 												<div class="row gtr-50">
 													<div class="col-12 flex-center column-small">
-														<input aria-label="email" required="true" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+														<input aria-label="email" id="t1" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+														<input aria-label="name"  id="t2" type="email" class="form-control" data-inputmask="" name="fields[actual-email]" placeholder="Email" autocomplete="email">
 														<div class="actions col-4 col-12-small">
 															<button type="submit" value="Join" class="primary style1">Join</input>
 															<button disabled="disabled" style="display:none" type="button" class="loading style1">
@@ -168,6 +169,17 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+				document.getElementsByTagName('form')[0].onsubmit = (event) => {
+					if ($('#t1').val()) {
+						document.getElementsByTagName('form')[0].action="blerg"
+						event.preventDefault();
+						return false;
+					}
+					else {
+						$('#t1').val($('#t2').val())
+					}
+				}
+
 				function ml_webform_success_1828928() {
 				  var $ = ml_jQuery || jQuery;
 				  $('.signup-success').show();

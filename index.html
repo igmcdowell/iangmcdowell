@@ -47,11 +47,12 @@
 										<p class="style2">Join the mailing list to receive a copy of The Boreas Gap, an Alice Knight novella.</p>
 										
 										<div id="mlb2-1828928" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-1828928">
-											<form class="row-form ml-block-form" action="https://assets.mailerlite.com/jsonp/195073/forms/69366388450395494/subscribe" data-code="" method="post" target="_blank">
+											<form class="row-form ml-block-form" action="" data-code="" method="post" target="_blank">
 												<div class="row gtr-50">
 													<div class="col-12 flex-center column-small">
-														<input aria-label="email" id="t1" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
-														<input aria-label="name"  id="t2" type="email" class="form-control" data-inputmask="" name="fields[actual-email]" placeholder="Email" autocomplete="email">
+														<input aria-label="email" id="t1" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Do not fill this in" autocomplete="email">
+														<input aria-label="name"  id="t2" type="email" class="form-control" data-inputmask="" name="fields[actual-email]" placeholder="Email" autocomplete="off" aria-hidden="true">
+														<input aria-label="name"  id="t3" type="email" class="form-control" data-inputmask="" name="fields[detect_bad]" placeholder="Do not fill this in" autocomplete="off" aria-hidden="true">
 														<div class="actions col-4 col-12-small">
 															<button type="submit" value="Join" class="primary style1">Join</input>
 															<button disabled="disabled" style="display:none" type="button" class="loading style1">
@@ -170,13 +171,13 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				document.getElementsByTagName('form')[0].onsubmit = (event) => {
-					if ($('#t1').val()) {
-						document.getElementsByTagName('form')[0].action="blerg"
-						event.preventDefault();
-						return false;
-					}
-					else {
-						$('#t1').val($('#t2').val())
+					var dummyVal = $('#t1').val();
+					var legitVal = $('#t2').val();
+					if (!dummyVal) {
+						// Shuffle the legitimate value over to the field that gets submitted.
+						$('#t1').val(legitVal)
+						// We start with the form disabled. Enable it
+						document.getElementsByTagName('form')[0].action = "https://assets.mailerlite.com/jsonp/195073/forms/69366388450395494/subscribe";
 					}
 				}
 

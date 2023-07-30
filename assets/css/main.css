@@ -97,7 +97,7 @@
 	}
 }
 
-#t1 {
+#t1, #t3 {
 	position: absolute !important;
 	left: -10000000px !important;
 }
